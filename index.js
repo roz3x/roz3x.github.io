@@ -42,7 +42,10 @@ let playing = 0
 /*
     oops
 */
-let token_2 =  "1159d9d5c615ed1868e38d3fdfa1bc1972e0fcad"
+let token_2 =  "cm96M3hkYnNwb3RpZnk6YjZmODMxZjk4NmNjMWE4OGFkOGM3YmZiNThhZDA0NjkwYTQ5ZjI5Nw=="
+
+
+// Authorization: "Basic cm96M3hkYnNwb3RpZnk6YjZmODMxZjk4NmNjMWE4OGFkOGM3YmZiNThhZDA0NjkwYTQ5ZjI5Nw=="
 let saved_items = {
     "tracks": {
         "items": []
@@ -52,7 +55,7 @@ let selected = 0
 
 window.onload = () => {
  
-    if (!(/ chrome|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    if (!(/ firefox|chrome|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
         var child = document.body.lastElementChild;
         while (child) {
             document.body.removeChild(child);
@@ -83,7 +86,7 @@ window.onload = () => {
                         "Content-Type": "application/x-www-form-urlencoded",
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        "Authorization": "token " + token_2
+                        "Authorization": "Basic " + token_2
                     },
                     method: "PUT"
                 }).then(data => data.json())
@@ -95,7 +98,7 @@ window.onload = () => {
                     body: JSON.stringify(dat),
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
-                        "Authorization": "token " + token_2
+                        "Authorization": "Basic " + token_2
                     },
                     method: "PUT"
                 }).then(data => {
@@ -135,7 +138,7 @@ window.onload = () => {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
                         // 'Accept': 'application/json',
-                        "Authorization": "token " + token_2
+                        "Authorization": "Basic " + token_2
                     },
                     method: "DELETE"
                 }).then(del_text => {
@@ -150,7 +153,7 @@ window.onload = () => {
                     body: JSON.stringify(dat),
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
-                        "Authorization": "token " + token_2
+                        "Authorization": "Basic " + token_2
                     },
                     method: "PUT"
                 }).then(data => {
@@ -170,7 +173,7 @@ window.onload = () => {
         fetch(`https://api.github.com/repos/roz3xdbspotify/db/contents` + document.cookie, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "token " + token_2
+                "Authorization": "Basic " + token_2
             },
             method: "GET",
             cache: "no-cache"
