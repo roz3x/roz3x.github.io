@@ -42,7 +42,7 @@ let playing = 0
 /*
     oops
 */
-let token_2 = "bb1a9464286b74ee231603bdb8a9db813b1fb976"
+let token_2 =  "1159d9d5c615ed1868e38d3fdfa1bc1972e0fcad"
 let saved_items = {
     "tracks": {
         "items": []
@@ -52,7 +52,7 @@ let selected = 0
 
 window.onload = () => {
  
-    if (!(/ Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    if (!(/ chrome|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
         var child = document.body.lastElementChild;
         while (child) {
             document.body.removeChild(child);
@@ -475,7 +475,7 @@ let play_preview = (src) => {
     }
     audioplayer.ontimeupdate = () => {
         document.getElementById("pointer").style.marginLeft = ((audioplayer.currentTime / audioplayer.duration * 85) + 1).toString() + "%"
-        document.getElementById("pointer").innerHTML = Math.round(audioplayer.currentTime / audioplayer.duration * 100).toString() + "% <div>🔊</div>"
+        document.getElementById("pointer").innerHTML = Math.round(audioplayer.currentTime / audioplayer.duration * 100).toString() + "% <div>🐙</div>"
     }
 }
 
