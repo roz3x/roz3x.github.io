@@ -55,7 +55,7 @@ let selected = 0
 
 window.onload = () => {
  
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    if (!(/chrome|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
         var child = document.body.lastElementChild;
         while (child) {
             document.body.removeChild(child);
