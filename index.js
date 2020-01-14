@@ -260,7 +260,7 @@ window.onload = () => {
                 for (let k = 0; k < len; k++) {
                     document.getElementById("song_id_" + k.toString()).onclick = () => {
                         document.getElementById("info").style.display = "block"
-                        document.getElementById("save").style.display = "inline"
+                        document.getElementById("save").style.display = "none"
                         // if (_data.tracks.items[k].preview_url != null){
                         //     let play_btn = document.getElementById("play_button")
                         //     now_playing = len++

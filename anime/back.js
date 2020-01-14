@@ -206,6 +206,6 @@ function fauxClick(x, y) {
   document.dispatchEvent(fauxClick);
 }
 
- setInterval(() => { 
-   handleEvent(2000 , 2000)
- }, 2000 )   
+//  setInterval(() => { 
+//    handleEvent(2000 , 2000)
+//  }, 2000 )   
