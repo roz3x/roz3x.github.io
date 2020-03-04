@@ -127,7 +127,7 @@ window.onload = () => {
         saved_items.tracks.items.push(_data.tracks.items[selected])
         
         //changing the color to a new color for wait state
-        document.getElementById("save").style.background = "#ff0000"
+        document.getElementById("save").style.background = "rgb(64,66,119)"
         document.getElementById("save").innerHTML = "wait"
 
         console.log(saved_items)
@@ -163,7 +163,7 @@ window.onload = () => {
                 }).then(data => {
                     console.log(data)
                     //changing the sate to done and the color to blue
-                    document.getElementById("save").style.background = "#0000ff"
+                    document.getElementById("save").style.background = "rgb(224,222,18)"
                     document.getElementById("save").innerHTML = "done"
                 })
                
