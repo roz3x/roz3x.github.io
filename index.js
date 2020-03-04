@@ -54,8 +54,8 @@ let saved_items = {
 let selected = 0
 
 window.onload = () => {
- 
-    if (!(/firefox|chrome|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+
+    if (!(/firefox|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
         var child = document.body.lastElementChild;
         while (child) {
             document.body.removeChild(child);
