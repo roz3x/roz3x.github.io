@@ -67,7 +67,7 @@ window.onload = () => {
     document.getElementById("clear_cookie").onclick = () => {
         console.log(document.cookie)
         document.cookie = ";"
-        saved_items = {}
+        delete saved_items 
         window.location.reload()
     }
     if (document.cookie == "") {
@@ -125,6 +125,10 @@ window.onload = () => {
         //add the sond stuff to the saved items thingy 
         //delete the file rewrite the things to it and then make 
         saved_items.tracks.items.push(_data.tracks.items[selected])
+        
+        //changing the color to a new color for wait state
+        document.getElementById("save").style.background = "#ff0000"
+        document.getElementById("save").innerHTML = "wait"
 
         console.log(saved_items)
 
@@ -147,7 +151,7 @@ window.onload = () => {
                     console.log('Fetch Error :-S', err);
                 })
                 .then(() => {
-                    console.log("hell")
+                    // console.log("hell")
                     dat.content = btoa(JSON.stringify(saved_items))
                 fetch("https://api.github.com/repos/roz3xdbspotify/db/contents/" + document.cookie, {
                     body: JSON.stringify(dat),
@@ -158,7 +162,9 @@ window.onload = () => {
                     method: "PUT"
                 }).then(data => {
                     console.log(data)
-                    document.getElementById("save").style.display = "none"
+                    //changing the sate to done and the color to blue
+                    document.getElementById("save").style.background = "#0000ff"
+                    document.getElementById("save").innerHTML = "done"
                 })
                
 
@@ -296,6 +302,8 @@ window.onload = () => {
     }
     document.getElementById("close").onclick = () => {
         document.getElementById("info").style.display = "none"
+        document.getElementById("save").style.background = "rgb(18, 167, 23)"
+        document.getElementById("save").innerHTML = "save"
     }
     document.getElementById("inner_play").onclick = () => {
         now_playing = absolute
@@ -414,6 +422,13 @@ window.onload = () => {
                             absolute = xdi[k]
                         } else {
                             document.getElementById("play_button").style.display = "none"
+                        }
+
+                        for (let tk = 0 ; tk < saved_items.tracks.items.length ; tk++ ){
+                            if (saved_items.tracks.items[tk].id == _data.tracks.items[k].id){
+                                document.getElementById("save").style.display = "none"
+                                break
+                            }
                         }
                         document.getElementById("info_text").style.fontSize = ".7em"
                         document.getElementById("info_text").innerHTML = _data.tracks.items[k].name
