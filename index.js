@@ -62,7 +62,7 @@ window.onload = () => {
 
             child = document.body.lastElementChild;
         }
-        document.body.innerHTML = "sorry ! not for computers"
+        document.body.innerHTML = "sorry ! Open Inspector tools and use Mobile Ui ; or use Mobile "
     }
     document.getElementById("clear_cookie").onclick = () => {
         console.log(document.cookie)
